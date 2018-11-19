@@ -1,0 +1,8 @@
+spring:
+  application:
+    name:
+      product-service-mybatis
+
+server:
+  port:
+    2223

@@ -35,6 +35,45 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- XML begin -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>xml-apis</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- 重新定义Java XPath Engine到最新版，避免旧版那些不必要的依赖 -->
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.1.4</version>
+		</dependency>
+		<!-- XML end -->
+
+		<!-- 中文分词 -->
+		<dependency>
+			<groupId>org.apdplat</groupId>
+			<artifactId>word</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch.plugin</groupId>
+			<artifactId>delete-by-query</artifactId>
+			<version>2.3.0</version>
+			<type>jar</type>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -45,6 +84,13 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<developers>
+		<developer>
+			<id>shishijie</id>
+			<name>shishijie</name>
+			<email>shishijie@live.com</email>
+			<organization>yztsoft</organization>
+		</developer>
+	</developers>
 
 </project>
