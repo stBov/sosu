@@ -29,7 +29,7 @@ public class EsClient {
         Client client = null;
         try {
             logger.info("创建Elasticsearch Client 开始");
-            Settings settings = Settings.settingsBuilder().put("cluster.name","hotel-index")
+            Settings settings = Settings.settingsBuilder().put("cluster.name","hotel")
                     .put("client.transport.sniff", true).build();
             TransportClient tranClien = TransportClient.builder().settings(settings).addPlugin(DeleteByQueryPlugin.class).build();
             String[] ips = "127.0.0.1:9200".split(",");
