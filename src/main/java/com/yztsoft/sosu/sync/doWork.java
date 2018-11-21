@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.Scheduled;
  **/
 @Configuration
 @EnableScheduling
-public class doWork {
+public class DoWork {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
