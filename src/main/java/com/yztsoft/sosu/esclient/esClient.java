@@ -1,5 +1,6 @@
 package com.yztsoft.sosu.esclient;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.elasticsearch.client.Client;
@@ -30,7 +31,7 @@ public class EsClient {
         Client client = null;
         try {
             logger.info("创建Elasticsearch Client 开始");
-            Settings settings = Settings.settingsBuilder().put("cluster.name","cas_hotel_produce")
+            Settings settings = Settings.settingsBuilder().put("cluster.name","yzt_index")
                     .put("client.transport.sniff", true).build();
             TransportClient tranClien = TransportClient.builder().settings(settings).addPlugin(DeleteByQueryPlugin.class).build();
             String[] ips = "127.0.0.1:9300".split(",");
@@ -38,7 +39,7 @@ public class EsClient {
                 throw new NullPointerException("elasticsearch server ip list is null");
             }
             for (String ip : ips) {
-                if(null != ip && !"".equals(ip)){
+                if(StringUtils.isNotBlank(ip)){
                     String[] address=ip.split(":");
                     tranClien.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(address[0]),Integer.valueOf(address[1])));
                 }
