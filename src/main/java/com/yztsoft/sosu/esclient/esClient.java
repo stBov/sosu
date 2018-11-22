@@ -9,6 +9,7 @@ import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.plugin.deletebyquery.DeleteByQueryPlugin;
 
 import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 /**
  * @classname: EsClient
@@ -29,15 +30,15 @@ public class EsClient {
         Client client = null;
         try {
             logger.info("创建Elasticsearch Client 开始");
-            Settings settings = Settings.settingsBuilder().put("cluster.name","hotel")
+            Settings settings = Settings.settingsBuilder().put("cluster.name","cas_hotel_produce")
                     .put("client.transport.sniff", true).build();
             TransportClient tranClien = TransportClient.builder().settings(settings).addPlugin(DeleteByQueryPlugin.class).build();
-            String[] ips = "127.0.0.1:9200".split(",");
+            String[] ips = "127.0.0.1:9300".split(",");
             if(ips==null || ips.length<1){
                 throw new NullPointerException("elasticsearch server ip list is null");
             }
             for (String ip : ips) {
-                if(null == ip && "".equals(ip)){
+                if(null != ip && !"".equals(ip)){
                     String[] address=ip.split(":");
                     tranClien.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(address[0]),Integer.valueOf(address[1])));
                 }
@@ -47,6 +48,7 @@ public class EsClient {
         } catch (Exception e) {
             logger.error("创建Client异常", e);
         }
+
         return client;
     }
 

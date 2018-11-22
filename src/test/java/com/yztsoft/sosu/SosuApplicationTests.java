@@ -17,9 +17,9 @@ public class SosuApplicationTests {
 	}
 
 	@Test
-	public void testEsClient() {
+	public void testEsClient_Aliases() {
 		IndicesAliasesRequest request=new IndicesAliasesRequest();
-		request.addAlias("123","2123");
+		request.addAlias("123","test");
 		EsClient.CLIENT.admin().indices().aliases(request).actionGet();
 	}
 }
