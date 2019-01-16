@@ -1,0 +1,87 @@
+{
+    "hotel_extend": {
+         "_all": {
+            "analyzer": "ik",
+            "search_analyzer": "ik",
+            "enabled":true
+        },
+        "properties": {
+            "id": {
+                "type": "long",
+                "index": "not_analyzed"
+            },
+            "hotelId": {
+            	"type" : "string",
+            	"index" : "not_analyzed"
+            },
+            "hotelTime": {
+            	"type" : "string",
+            	"index" : "not_analyzed"
+            },
+            "timeZone": {
+            	"type" : "string",
+            	"index" : "not_analyzed"
+            },
+            "zip": {
+            	"type" : "string",
+            	"index" : "not_analyzed"
+            },
+            "email": {
+            	"type" : "string",
+            	"index" : "not_analyzed"
+            },
+            "checkOut": {
+            	"type" : "string",
+                "index":  "not_analyzed"
+            },
+            "checkIn": {
+            	"type" : "string",
+            	"index":  "not_analyzed"
+            },
+            "lateCheckIn": {
+            	"type" : "string",
+            	 "index" : "not_analyzed"
+            },
+            "extraAdult": {
+            	"type" : "string",
+            	 "index" : "not_analyzed"
+            },
+            "currency": {
+            	"type" : "string",
+            	"index":  "not_analyzed"
+            },
+            "maxPeople": {
+            	"type" : "string",
+                "index":  "not_analyzed"
+            },
+            "totalFloors": {
+            	"type" : "string",
+            	 "index":  "not_analyzed"
+            },
+            "joinType": {
+            	"type" : "string",
+            	"index":  "not_analyzed"
+            },
+            "specialInvoice": {
+            	"type" : "boolean",
+            	"index":  "not_analyzed"
+            },
+            "specialInvoiceDesc": {
+            	"type" : "string",
+             	"index":  "not_analyzed"
+            },
+            "specialRate": {
+            	"type" : "string",
+             	"index":  "not_analyzed"
+            },
+            "transportation": {
+            	"type" : "string",
+              	"index":  "not_analyzed"
+            },
+            "receptionForeigner": {
+            	"type" : "boolean",
+              	"index":  "not_analyzed"
+            }
+        }
+    }
+}

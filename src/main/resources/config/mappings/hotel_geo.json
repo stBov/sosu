@@ -1,0 +1,61 @@
+{
+    "hotel_geo": {
+         "_all": {
+            "analyzer": "ik",
+            "search_analyzer": "ik",
+            "enabled":true
+        },
+        "properties": {
+            "id": {
+                "type": "string",
+            	"index":  "not_analyzed"
+            },
+            "proCode": {
+            	"type" : "string",
+            	"index":  "not_analyzed"
+            },
+            "cityCode": {
+            	"type" : "string",
+            	"index":  "not_analyzed"
+            },
+            "cityName": {
+            	"store" : "true",
+            	"type" : "string",
+            	"index" : "analyzed"
+            },
+            "hotelNum": {
+            	"type" : "integer",
+            	"index":  "not_analyzed"
+            },
+            "pinyin": {
+            	"type" : "string",
+            	"index" : "analyzed"
+            },
+            "initial": {
+            	"type" : "string",
+                "index":  "not_analyzed"
+            },
+            "createDate": {
+            	"type" : "long",
+            	"index":  "not_analyzed"
+            },
+            "updateDate": {
+            	"type" : "long",
+            	 "index" : "not_analyzed"
+            },
+            "dataStatus": {
+            	"type" : "boolean",
+            	"index":  "not_analyzed"
+            },
+            "cityNameen": {
+            	"store" : "store",
+            	"type" : "string",
+            	"index":  "analyzed"
+            },
+            "level": {
+            	"type" : "integer",
+                "index":  "not_analyzed"
+            }
+        }
+    }
+}

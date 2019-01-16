@@ -1,0 +1,56 @@
+{
+    "hotel_location": {
+         "_all": {
+            "analyzer": "ik",
+            "search_analyzer": "ik",
+            "enabled":true
+        },
+        "properties": {
+            "id": {
+                "type": "long",
+                "index":  "not_analyzed"
+            },
+            "name": {
+            	"store" : "true",
+            	"type" : "string"
+            },
+            "nameEn": {
+            	"store" : "true",
+            	"type" : "string"
+            },
+            "cityName": {
+            	"type" : "string",
+            	"index" : "analyzed"
+            },
+            "geoId": {
+            	"type" : "string",
+            	"index":  "not_analyzed"
+            },
+            "gategory": {
+            	"type" : "string",
+            	"index":  "not_analyzed"
+            },
+            "pinyin": {
+            	"type" : "string"
+            },
+            "initial": {
+            	"type" : "string",
+            	"index":  "not_analyzed"
+            },
+            "createDate": {
+            	"type" : "long",
+            	"index":  "not_analyzed"
+            },
+            "updateDate": {
+            	"store" : "true",
+            	"type" : "long",
+            	"index" : "not_analyzed"
+            },
+            "dataStatus": {
+            	"store" : "true",
+            	"type" : "boolean",
+            	"index":  "not_analyzed"
+            }
+        }
+    }
+}
